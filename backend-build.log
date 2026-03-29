@@ -1,0 +1,132 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+time="2025-11-02T20:46:48+05:00" level=warning msg="E:\\Hikmah-Ai\\Hikmah_AI\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+#1 [internal] load local bake definitions
+#1 reading from stdin 552B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 388B 0.0s done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.10-slim
+#3 DONE 2.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/4] FROM docker.io/library/python:3.10-slim@sha256:e0c4fae70d550834a40f6c3e0326e02cfe239c2351d922e1fb1577a3c6ebde02
+#6 resolve docker.io/library/python:3.10-slim@sha256:e0c4fae70d550834a40f6c3e0326e02cfe239c2351d922e1fb1577a3c6ebde02
+#6 resolve docker.io/library/python:3.10-slim@sha256:e0c4fae70d550834a40f6c3e0326e02cfe239c2351d922e1fb1577a3c6ebde02 0.2s done
+#6 DONE 0.2s
+
+#7 [2/4] WORKDIR /app
+#7 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 1.67kB 0.0s done
+#5 DONE 0.1s
+
+#8 [3/4] COPY . .
+#8 DONE 0.3s
+
+#9 [4/4] RUN pip install --no-cache-dir -r requirements.txt
+#9 17.27 Collecting fastapi
+#9 17.69   Downloading fastapi-0.120.4-py3-none-any.whl (108 kB)
+#9 17.82      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.2/108.2 kB 1.1 MB/s eta 0:00:00
+#9 20.40 Collecting uvicorn
+#9 20.46   Downloading uvicorn-0.38.0-py3-none-any.whl (68 kB)
+#9 20.57      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.1/68.1 kB 920.4 kB/s eta 0:00:00
+#9 35.83 Collecting pydantic
+#9 35.90   Downloading pydantic-2.12.3-py3-none-any.whl (462 kB)
+#9 40.50      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 462.4/462.4 kB 99.4 kB/s eta 0:00:00
+#9 45.85 Collecting openai
+#9 45.92   Downloading openai-2.6.1-py3-none-any.whl (1.0 MB)
+#9 58.28      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 88.2 kB/s eta 0:00:00
+#9 60.88 Collecting starlette
+#9 60.94   Downloading starlette-0.50.0-py3-none-any.whl (74 kB)
+#9 61.77      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.0/74.0 kB 96.1 kB/s eta 0:00:00
+#9 62.18 Collecting python-multipart
+#9 62.24   Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+#9 63.34 Collecting pyarabic
+#9 63.41   Downloading PyArabic-0.6.15-py3-none-any.whl (126 kB)
+#9 64.87      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.4/126.4 kB 90.5 kB/s eta 0:00:00
+#9 65.51 Collecting annotated-doc>=0.0.2
+#9 65.64   Downloading annotated_doc-0.0.3-py3-none-any.whl (5.5 kB)
+#9 65.75 Collecting starlette
+#9 65.82   Downloading starlette-0.49.3-py3-none-any.whl (74 kB)
+#9 66.41      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.3/74.3 kB 159.4 kB/s eta 0:00:00
+#9 68.08 Collecting typing-extensions>=4.8.0
+#9 68.17   Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+#9 68.55      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.6/44.6 kB 123.9 kB/s eta 0:00:00
+#9 70.44 Collecting click>=7.0
+#9 70.51   Downloading click-8.3.0-py3-none-any.whl (107 kB)
+#9 71.08      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.3/107.3 kB 210.1 kB/s eta 0:00:00
+#9 71.64 Collecting h11>=0.8
+#9 71.70   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#9 72.81 Collecting typing-inspection>=0.4.2
+#9 72.86   Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+#9 73.44 Collecting annotated-types>=0.6.0
+#9 73.57   Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+#9 156.9 Collecting pydantic-core==2.41.4
+#9 157.4   Downloading pydantic_core-2.41.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#9 178.7      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 96.7 kB/s eta 0:00:00
+#9 179.9 Collecting anyio<5,>=3.5.0
+#9 180.0   Downloading anyio-4.11.0-py3-none-any.whl (109 kB)
+#9 180.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.1/109.1 kB 200.7 kB/s eta 0:00:00
+#9 181.5 Collecting sniffio
+#9 181.5   Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+#9 189.0 Collecting jiter<1,>=0.10.0
+#9 189.1   Downloading jiter-0.11.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (359 kB)
+#9 192.4      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 359.3/359.3 kB 109.6 kB/s eta 0:00:00
+#9 193.3 Collecting httpx<1,>=0.23.0
+#9 193.4   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#9 193.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 208.1 kB/s eta 0:00:00
+#9 196.1 Collecting tqdm>4
+#9 196.1   Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+#9 197.6      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 74.1 kB/s eta 0:00:00
+#9 198.2 Collecting distro<2,>=1.7.0
+#9 198.4   Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+#9 200.6 Collecting six>=1.14.0
+#9 201.0   Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+#9 202.0 Collecting idna>=2.8
+#9 202.0   Downloading idna-3.11-py3-none-any.whl (71 kB)
+#9 202.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB 112.9 kB/s eta 0:00:00
+#9 203.3 Collecting exceptiongroup>=1.0.2
+#9 203.4   Downloading exceptiongroup-1.3.0-py3-none-any.whl (16 kB)
+#9 204.3 Collecting httpcore==1.*
+#9 204.9   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#9 205.8      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 73.8 kB/s eta 0:00:00
+#9 207.1 Collecting certifi
+#9 207.2   Downloading certifi-2025.10.5-py3-none-any.whl (163 kB)
+#9 209.9      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 163.3/163.3 kB 59.3 kB/s eta 0:00:00
+#9 211.4 Installing collected packages: typing-extensions, tqdm, sniffio, six, python-multipart, jiter, idna, h11, distro, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, pyarabic, httpcore, exceptiongroup, pydantic, anyio, starlette, httpx, openai, fastapi
+#9 220.7 Successfully installed annotated-doc-0.0.3 annotated-types-0.7.0 anyio-4.11.0 certifi-2025.10.5 click-8.3.0 distro-1.9.0 exceptiongroup-1.3.0 fastapi-0.120.4 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.11 jiter-0.11.1 openai-2.6.1 pyarabic-0.6.15 pydantic-2.12.3 pydantic-core-2.41.4 python-multipart-0.0.20 six-1.17.0 sniffio-1.3.1 starlette-0.49.3 tqdm-4.67.1 typing-extensions-4.15.0 typing-inspection-0.4.2 uvicorn-0.38.0
+#9 220.7 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 223.2 
+#9 223.2 [notice] A new release of pip is available: 23.0.1 -> 25.3
+#9 223.2 [notice] To update, run: pip install --upgrade pip
+#9 DONE 224.3s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 8.1s done
+#10 exporting manifest sha256:bf98df87d693da3a9a960a958d9bdda46558e993cb3792aa4cf75479bb6c5833
+#10 exporting manifest sha256:bf98df87d693da3a9a960a958d9bdda46558e993cb3792aa4cf75479bb6c5833 0.2s done
+#10 exporting config sha256:5ed68ee7b1b96289b3e2fe037ecb107724e10cd61bdec33e309204e7ee288b53
+#10 exporting config sha256:5ed68ee7b1b96289b3e2fe037ecb107724e10cd61bdec33e309204e7ee288b53 0.2s done
+#10 exporting attestation manifest sha256:f438860c4592ff764a85d8857e4def5bab03086884cbfe2091daaee56f033de0
+#10 exporting attestation manifest sha256:f438860c4592ff764a85d8857e4def5bab03086884cbfe2091daaee56f033de0 0.3s done
+#10 exporting manifest list sha256:a854203ca7a98c951df268f777bc0a1f12a252f10d7477a15c8bb8f1d6167064
+#10 exporting manifest list sha256:a854203ca7a98c951df268f777bc0a1f12a252f10d7477a15c8bb8f1d6167064 0.2s done
+#10 naming to docker.io/library/hikmah_ai-backend:latest 0.0s done
+#10 unpacking to docker.io/library/hikmah_ai-backend:latest
+#10 unpacking to docker.io/library/hikmah_ai-backend:latest 5.5s done
+#10 DONE 15.0s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.1s
+ hikmah_ai-backend  Built

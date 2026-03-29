@@ -1,0 +1,312 @@
+/* CSS variables for easy theming */
+:root {
+  --bg: #0f1724;
+  --panel: #0b1220;
+  --input-bg: #0f1724;
+  --muted: #abd6f5;
+  --accent: #1ab2b8;
+  --accent-hover: #1ab2b8;
+  --danger: #ef4444;
+  --glass: rgba(255, 255, 255, 0.03);
+  --shadow: 0 6px 10px rgba(2, 6, 23, 0.2);
+  --radius: 50px;
+  --small-radius: 10px;
+  --transition: 0.8s ease;
+  --max-width: 900px;
+}
+
+.chat-input-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 12px auto;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  /* background-color: red; */
+}
+
+/* Main input box */
+.chat-input-box {
+  margin: auto;
+  max-width: 60%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), transparent);
+  border-radius: var(--radius);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Plus icon (left) */
+.plus-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--glass);
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.plus-icon:hover {
+  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.plus-icon img {
+  width: 30px;
+  height: 30px;
+  /* pointer-events: none; */
+}
+
+/* Options menu: small card above/beside plus */
+.options-menu {
+  position: absolute;
+  left: 12px;
+  /* adjust if your layout differs */
+  bottom: 60px;
+  min-width: 220px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, ), rgba(255, 255, 255));
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 0px 6px rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  z-index: 40;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+/* Option item inside menu */
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0b1220;
+  transition: background var(--transition), transform var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.option-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateY(-2px);
+}
+
+.option-item img {
+  width: 23px;
+  height: 23px;
+  opacity: 0.95;
+}
+
+/* Hide default file input but keep clickable through label */
+.option-item input[type="file"] {
+  display: none;
+}
+
+/* The main form - takes flexible width */
+.input-form {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Textarea styling similar to ChatGPT */
+.input-form input {
+  width: 100%;
+  resize: none;
+  overflow: auto;
+  padding: 8px 8px 10px 16px;
+  border-radius: 50px;
+  background: #e8e8e8;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 18px;
+  outline: none;
+  /* box-shadow: none; */
+  transition: border-color var(--transition);
+  caret-color: var(--accent);
+}
+
+/* show subtle focus */
+.input-form input:focus {
+  box-shadow: 0 6px 20px rgba(2, 8, 20, 0.45);
+  border-color: rgba(16, 185, 129, 0.12);
+}
+
+/* Recording wave animation */
+.recording-wave-animation {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  width:100%;
+  justify-content: center;
+}
+
+.recording-wave-animation span {
+  display: block;
+  width: 6px;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--danger);
+  animation: wave 800ms linear infinite;
+  opacity: 0.95;
+}
+
+.recording-wave-animation span:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+.recording-wave-animation span:nth-child(3) {
+  animation-delay: 240ms;
+}
+
+.recording-wave-animation span:nth-child(4) {
+  animation-delay: 360ms;
+}
+
+@keyframes wave {
+  0% {
+    transform: scaleY(0.5);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scaleY(1.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0.5);
+    opacity: 0.6;
+  }
+}
+
+/* Action buttons on right */
+.voice-btn,
+.send-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8e8;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), border-color var(--transition);
+  margin-left: 2px;
+}
+
+.voice-btn img,
+.send-btn img {
+  width: 23px;
+  height: 23px;
+  /* pointer-events: none; */
+}
+
+/* When recording make mic button red and subtle pulse */
+.voice-btn.recording {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.22);
+  animation: pulse 1400ms infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.12);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.02);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.02);
+  }
+}
+
+/* Send button uses accent */
+.send-btn {
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.14), rgba(16, 185, 129, 0.08));
+  border: 1px solid rgba(16, 185, 129, 0.16);
+}
+
+.send-btn:active {
+  transform: translateY(1px);
+}
+
+/* Disabled states */
+.send-btn:disabled,
+.voice-btn:disabled,
+.plus-icon[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  filter: grayscale(0.15);
+}
+
+/* Hover effects */
+.voice-btn:hover:not(:disabled),
+.send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+/* Small screens: rearrange slightly */
+@media (max-width: 640px) {
+  .chat-input-box {
+    max-width: 100%;
+    padding: 8px 6px;
+    /* gap: 8px; */
+  }
+
+  .plus-icon,
+  .voice-btn,
+  .send-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .input-form textarea {
+    min-height: 40px;
+    font-size: 14px;
+    padding: 10px;
+    max-height: 160px;
+  }
+
+  .options-menu {
+    left: 8px;
+    bottom: 66px;
+    min-width: 190px;
+  }
+
+  .input-form input::placeholder{
+    font-size: 14px;
+  }
+}
+
+/* Optional: subtle top border line to separate from messages */
+.chat-input-container+.messages-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Accessibility: focus rings */
+.plus-icon:focus,
+.voice-btn:focus,
+.send-btn:focus,
+.option-item:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+  border-radius: 50px;
+}

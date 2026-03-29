@@ -1,0 +1,22 @@
+fastapi
+uvicorn
+pydantic
+openai
+starlette
+python-multipart
+pyarabic
+google-cloud-firestore
+firebase_admin
+requests
+# langchain
+groq
+# openai
+# requests
+# langchain
+# openai
+# chromadb
+# beautifulsoup4
+# pandas
+# numpy
+# tqdm
+# python-dotenv

@@ -1,0 +1,99 @@
+
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: hikmah_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+  frontend:
+    build: ./frontend
+    container_name: hikmah_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+
+
+# version: '3.8'
+# services:
+#   backend:
+#     image: hikmahacr.azurecr.io/hikmah-backend:v4
+#     container_name: backend
+#     # ports:
+#     #   - "8000:8000"
+#     environment:
+#       - PORT=8000
+#       - WEBSITES_PORT=8000
+#       - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+#   frontend:
+#     image: hikmahacr.azurecr.io/hikmah_ai-frontend:v15
+#     container_name: frontend
+#     ports:
+#       - "80:80"
+#     depends_on:
+#       - backend
+
+  # chromadb:
+  #   image: chromadb/chroma
+  #   container_name: hikmah_chromadb
+  #   ports:
+  #     - "8001:8000"
+  #   volumes:
+  #     - ./data_pipeline/data/vectors:/data
+
+
+# version: '3.8'
+
+
+# version: '3.8'
+# services:
+#   backend:
+#     image: hikmahacr.azurecr.io/hikmah-backend:latest
+#     container_name: backend
+#     ports:
+#       - "8000:8000"
+#     environment:
+#       - PORT=8000
+#       - WEBSITES_PORT=8000
+#       - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+#   frontend:
+#     image: hikmahacr.azurecr.io/hikmah_ai-frontend:latest
+#     container_name: frontend
+#     ports:
+#       - "80:80"
+
+# version: "3.8"
+
+# services:
+#   backend:
+#     build: ./backend
+#     container_name: hikmah_backend
+#     ports:
+#       - "8000:8000"
+
+#   frontend:
+#     build: ./frontend
+#     container_name: hikmah_frontend
+#     ports:
+#       - "3000:80"
+#     depends_on:
+#       - backend
+
+#   chromadb:
+#     image: chromadb/chroma
+#     container_name: hikmah_chromadb
+#     ports:
+#       - "8001:8000"
+#     volumes:
+#       - ./data_pipeline/data/vectors:/data
+
